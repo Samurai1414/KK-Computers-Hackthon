@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training and Development Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#008080',
+                            dark: '#006666'
+                        },
+                        accent: {
+                            DEFAULT: '#FFD700',
+                            dark: '#FFC000'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Dynamic Island Navbar -->
+    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-black/80 backdrop-blur-lg rounded-full shadow-lg z-50 transition-all duration-500 hover:rounded-2xl" id="dynamic-navbar">
+        <div class="px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2 group">
+                    <img src="images/2kk.png" alt="Logo" class="h-8 w-8 rounded-full transform group-hover:scale-110 transition-transform">
+                    <span class="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Training Center</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link text-white/80 hover:text-white transition-colors relative">
+                        Home
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#courses" class="nav-link text-white/80 hover:text-white transition-colors relative">
+                        Courses
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#gallery" class="nav-link text-white/80 hover:text-white transition-colors relative">
+                        Gallery
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#team" class="nav-link text-white/80 hover:text-white transition-colors relative">
+                        Team
+                        <span class="nav-indicator"></span>
+                    </a>
+                    <a href="#contact" class="nav-link text-white/80 hover:text-white transition-colors relative">
+                        Contact
+                        <span class="nav-indicator"></span>
+                    </a>
+                </div>
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+                    <svg class="w-5 h-5 dark:hidden text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                    </svg>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path class="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 py-2 bg-black/90 rounded-2xl mt-2 transition-all duration-300 opacity-0">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-white/80 hover:text-white py-2 transition-colors">Home</a>
+                <a href="#courses" class="text-white/80 hover:text-white py-2 transition-colors">Courses</a>
+                <a href="#gallery" class="text-white/80 hover:text-white py-2 transition-colors">Gallery</a>
+                <a href="#team" class="text-white/80 hover:text-white py-2 transition-colors">Team</a>
+                <a href="#contact" class="text-white/80 hover:text-white py-2 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with enhanced animations -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/carousel-1.jpg" alt="Hero" class="w-full h-full object-cover animate-ken-burns">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
+        </div>
+        <div class="relative container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
+                Empowering Youth Through <span class="text-gradient">IT & Skill Development</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+                Certified courses in Tally, Python, MS Office, and more. Start your digital journey with expert trainers and job-ready skills.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-400">
+                <a href="#courses" class="btn-primary">
+                    Explore Courses
+                    <span class="btn-shine"></span>
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    Enroll Now
+                    <span class="btn-shine"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/about.png" alt="About Us" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Welcome to KK Educational and Rural Development Society</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        KK Educational and Rural Development Society is committed to transforming the lives of individuals in rural areas through quality education, skill development, and community empowerment initiatives. We operate in regions where access to education is limited, aiming to break down barriers and create pathways to knowledge and opportunity.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold mb-2">Skilled Instructors</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Expert guidance from certified trainers</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold mb-2">Vocational Training</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Job-ready skills development</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold mb-2">Community Empowerment</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Initiatives for rural development</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold mb-2">Women's Education</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Equal access to opportunities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="py-12 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="relative overflow-hidden">
+                <div id="carousel" class="flex transition-transform duration-500">
+                    <div class="w-full flex-shrink-0">
+                        <img src="images/carousel-1.jpg" alt="Slide 1" class="w-full h-[600px] object-cover rounded-lg">
+                    </div>
+                    <div class="w-full flex-shrink-0">
+                        <img src="images/carousel-2.jpg" alt="Slide 2" class="w-full h-[600px] object-cover rounded-lg">
+                    </div>
+                    <div class="w-full flex-shrink-0">
+                        <img src="images/cat-1.jpg" alt="Slide 3" class="w-full h-[600px] object-cover rounded-lg">
+                    </div>
+                </div>
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Popular Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- MS Office -->
+                <div class="course-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/MS.png" alt="MS Office" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">MS Office Comprehensive Course</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-primary font-bold">₹4,500.00</span>
+                            <span class="text-gray-600 dark:text-gray-300">45 Days</span>
+                        </div>
+                        <a href="#contact" class="block text-center bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition duration-300">Join Now</a>
+                    </div>
+                </div>
+                <!-- Tally -->
+                <div class="course-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/TALLY.png" alt="Tally" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Tally ERP 9 Training</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-primary font-bold">₹4,500.00</span>
+                            <span class="text-gray-600 dark:text-gray-300">45 Days</span>
+                        </div>
+                        <a href="#contact" class="block text-center bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition duration-300">Join Now</a>
+                    </div>
+                </div>
+                <!-- DTP -->
+                <div class="course-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/DTP.png" alt="DTP" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Desktop Publishing (DTP)</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-primary font-bold">₹4,500.00</span>
+                            <span class="text-gray-600 dark:text-gray-300">45 Days</span>
+                        </div>
+                        <a href="#contact" class="block text-center bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition duration-300">Join Now</a>
+                    </div>
+                </div>
+                <!-- Photoshop -->
+                <div class="course-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/PS.png" alt="Photoshop" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Adobe Photoshop</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-primary font-bold">₹4,500.00</span>
+                            <span class="text-gray-600 dark:text-gray-300">45 Days</span>
+                        </div>
+                        <a href="#contact" class="block text-center bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition duration-300">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-12 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">Our Partners</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <img src="images/ddugky.png" alt="DDUGKY" class="h-16 grayscale hover:grayscale-0 transition duration-300">
+                <img src="images/mepma.png" alt="MEPMA" class="h-16 grayscale hover:grayscale-0 transition duration-300">
+                <img src="images/ssdc.jpeg" alt="SSDC" class="h-16 grayscale hover:grayscale-0 transition duration-300">
+                <img src="images/sc.png" alt="SC" class="h-16 grayscale hover:grayscale-0 transition duration-300">
+                <img src="images/nsdc.png" alt="NSDC" class="h-16 grayscale hover:grayscale-0 transition duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Our Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Images -->
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/a1.jpg" alt="Gallery 1" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/a2.jpg" alt="Gallery 2" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/sam 1.jpg" alt="Gallery 3" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/sam 2.jpg" alt="Gallery 4" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/guntur 1.jpg" alt="Gallery 5" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/guntur 2.jpg" alt="Gallery 6" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/darsi 1.jpg" alt="Gallery 7" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg cursor-pointer" onclick="openLightbox(this)">
+                    <img src="images/darsi 2.jpg" alt="Gallery 8" class="w-full h-64 object-cover transform hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+            <img id="lightbox-img" src="" alt="Lightbox Image" class="max-h-[90vh] max-w-[90vw] object-contain">
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Expert Instructors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Team Member -->
+                <div class="team-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/prasad.jpg" alt="CHATRAPU BKVV PRASAD" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">CHATRAPU BKVV PRASAD</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Ongole - Center Incharge</p>
+                    </div>
+                </div>
+                <!-- Team Member -->
+                <div class="team-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/lakshmi.jpg" alt="LAKSHMI" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">LAKSHMI</h3>
+                        <p class="text-gray-600 dark:text-gray-300">MANAGEMENT INFORMATION SYSTEM</p>
+                    </div>
+                </div>
+                <!-- Team Member -->
+                <div class="team-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/bhaskhar.jpg" alt="L .BHASKHAR" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">L .BHASKHAR</h3>
+                        <p class="text-gray-600 dark:text-gray-300">IT TRAINER</p>
+                    </div>
+                </div>
+                <!-- Team Member -->
+                <div class="team-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="images/Surendra.jpg" alt="Sanikommu Surendra" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Sanikommu Surendra</h3>
+                        <p class="text-gray-600 dark:text-gray-300">DOMAIN TRAINER</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">What Our Students Say</h2>
+            <div class="testimonial-carousel relative">
+                <div class="flex transition-transform duration-500" id="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="w-full flex-shrink-0">
+                        <div class="max-w-3xl mx-auto bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                            <div class="flex items-center mb-6">
+                                <img src="images/testimonial-1.jpg" alt="Student 1" class="w-16 h-16 rounded-full object-cover">
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Sarah Johnson</h3>
+                                    <p class="text-gray-600 dark:text-gray-300">Tally Program Graduate</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic">"The training program exceeded my expectations. The hands-on experience and expert guidance helped me secure a great job."</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="w-full flex-shrink-0">
+                        <div class="max-w-3xl mx-auto bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                            <div class="flex items-center mb-6">
+                                <img src="images/testimonial-2.jpg" alt="Student 2" class="w-16 h-16 rounded-full object-cover">
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Michael Chen</h3>
+                                    <p class="text-gray-600 dark:text-gray-300">DTP Course Alumni</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 italic">"The practical approach to learning and supportive environment made my learning journey enjoyable and effective."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Navigation -->
+                <button onclick="prevTestimonial()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="nextTestimonial()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-full">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Contact Us</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email ID</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Purpose / Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-600 dark:border-gray-500 dark:text-white"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+                <!-- Map and Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7715.935538712742!2d80.03318253764813!3d15.504846774678269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4b0108c7564ac5%3A0x34dcdf40f1cef1cc!2sKK%20Computers!5e0!3m2!1sen!2sin!4v1752787052792!5m2!1sen!2sin" 
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Head Office</h3>
+                                <p class="text-gray-600 dark:text-gray-300">34-1/16, Opposite District Library, Court Centre, Ongole</p>
+                                <p class="text-gray-600 dark:text-gray-300">+91 9963647799</p>
+                                <p class="text-gray-600 dark:text-gray-300">kkcomputersiso@gmail.com</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Society Address</h3>
+                                <p class="text-gray-600 dark:text-gray-300">37-1-413 (1198), Ram Nagar, Sth Janepalli, Ongole, Prakasam District</p>
+                                <p class="text-gray-600 dark:text-gray-300">+91 9963647799</p>
+                                <p class="text-gray-600 dark:text-gray-300">kkcomputersiso@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="images/kk.png" alt="Footer Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">Empowering through education and training.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Training Partners</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <img src="images/ddugky.png" alt="DDUGKY" class="h-8">
+                        <img src="images/nsdc.png" alt="NSDC" class="h-8">
+                        <img src="images/pmkvy.png" alt="PMKVY" class="h-8">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
+                    <p class="text-gray-400 mb-4">Stay connected with us for training schedules, new courses, and community programs.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">© KK COMPUTERS, All Rights Reserved. Designed by KK Educational and Rural Development Society</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
