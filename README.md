@@ -31,29 +31,6 @@ The site highlights:
 
 ---
 
-## 📁 Folder Structure
-
-kk-education-website/
-├── index.html
-├── courses.html
-├── gallery.html
-├── contact.html
-├── team.html
-├── testimonial.html
-├── script.js
-├── style.css
-├── images/
-│ ├── 2kk.png # Logo
-│ ├── about.png # About Section
-│ ├── pmkvy.png, ddugky.png # Courses/Partners
-│ ├── sam 1.jpg ... guntur 7.jpg # Gallery
-│ ├── testimonial-1.jpg ... # Testimonials
-│ ├── team-1.jpg ... team-4.jpg # Team
-│ └── ... all other assets
-└── README.md
-
----
-
 ## 🖼️ Image Usage Map
 
 | Image File Name       | Used In                           |
